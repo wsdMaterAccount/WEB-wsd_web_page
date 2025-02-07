@@ -119,4 +119,7 @@ body {
   .card {
     margin: 75px auto; /* 가운데 정렬 */
   }
+  .footer {
+    display: none;
+  }
 }
