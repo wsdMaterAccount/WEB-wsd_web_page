@@ -1,0 +1,117 @@
+/* 기본 폰트 설정 */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 페이지 최상단 제목 스타일 */
+.page-header {
+  margin-top: 80px;
+  color: black;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* 🔹 고정된 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+/* 🔹 고정된 푸터 */
+.footer {
+  position: fixed;
+  flex-direction: row;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f3f4f6;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 카드 스타일 (하나만 유지!) */
+.card {
+  background: white;
+  border: 1px solid black;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 350px;
+  text-align: left;
+  overflow: hidden;
+  margin: 100px auto; /* 가운데 정렬 */
+}
+
+/* 이미지 스타일 */
+.card-image {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* 블로그 태그 스타일 */
+.card-tag {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 설명 스타일 */
+.card-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 버튼 스타일 */
+.card-button {
+  display: block;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.card-button:hover {
+  background: #333;
+}
