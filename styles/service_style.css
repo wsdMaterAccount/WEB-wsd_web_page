@@ -1,71 +1,63 @@
-/* 기본 폰트 설정 */
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-/* 페이지 최상단 제목 스타일 */
-.page-header {
-  margin-top: 80px;
-  color: black;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-/* 🔹 고정된 헤더 */
+/* header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  z-index: 1000;
+  width: 100vw;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.container {
+.nav-container {
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #dc2626;
+  color: black;
 }
 
-/* 🔹 고정된 푸터 */
-.footer {
-  position: fixed;
-  flex-direction: row;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f3f4f6;
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #6b7280;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+.nav-link {
+  color: gray;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* 🔹 카드 스타일 (하나만 유지!) */
+.nav-link:hover {
+  color: gray;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* main */
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container > h1 {
+  width: 100vw;
+  height: 7vh;
+  font-size: 20px;
+  padding-left: 10vw;
+  background-color: #faf9fa;
+  display: flex;
+  align-items: center;
+}
+
+/* 카드 스타일 */
 .card {
-  background: white;
   border: 1px solid black;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 350px;
+  height: 500px;
   text-align: left;
   overflow: hidden;
   margin: 100px auto; /* 가운데 정렬 */
@@ -106,20 +98,50 @@ body {
   cursor: pointer;
   margin-top: 20px;
 }
+
 .card-buttons {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
+
 .card-button:hover {
   background: #333;
 }
 
-@media (max-width: 700px) {
-  .card {
-    margin: 75px auto; /* 가운데 정렬 */
+/* footer */
+.footer-container {
+  background-color: ghostwhite;
+  width: 100vw;
+  height: 5vh;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .footer {
-    display: none;
+
+  .main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px 20px 0px;
+  }
+
+  .footer-container {
+    background-color: ghostwhite;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
   }
 }
