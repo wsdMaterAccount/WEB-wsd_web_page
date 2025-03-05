@@ -33,22 +33,31 @@
   text-underline-offset: 3px;
 }
 
-/* main */
 .main-container {
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .main-container > h1 {
-  width: 100vw;
+  width: 100%;
   height: 7vh;
   font-size: 20px;
   padding-left: 10vw;
   background-color: #faf9fa;
   display: flex;
   align-items: center;
+}
+
+/* 카드들을 가로로 정렬 */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 카드 사이 간격 */
+  flex-wrap: wrap; /* 화면 작아지면 카드가 내려가도록 */
+  padding: 20px;
 }
 
 /* 카드 스타일 */
@@ -60,7 +69,6 @@
   height: 500px;
   text-align: left;
   overflow: hidden;
-  margin: 100px auto; /* 가운데 정렬 */
 }
 
 /* 이미지 스타일 */
@@ -127,6 +135,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-container > h1 {
+    padding-left: 0;
+    text-align: center;
   }
 
   .main-container {
