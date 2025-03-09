@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WSD - What Should Do</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="../styles/service_style.css" />
   </head>
   <body>
+    <!-- 상단 -->
     <header class="header">
       <div class="nav-container">
         <h1 class="logo">WSD</h1>
@@ -21,53 +21,23 @@
       </div>
     </header>
 
-    <main class="main-container">
-      <div class="cards-container">
-        <div class="card">
-          <img
-            src="/assets/write_poem.png"
-            alt="Microsoft 365 Copilot"
-            class="card-image"
-          />
-          <p class="card-tag">시를 읽다 쓰다</p>
-          <p class="card-description">
-            시를 쓰고 읽고 공유하는 ios / android 어플리케이션입니다.
-          </p>
-          <div class="card-buttons">
-            <a href="../pages/poem_service/terms.html" class="card-button"
-              >이용약관</a
-            >
-            <a href="../pages/poem_service/policy.html" class="card-button"
-              >정보처리방침</a
-            >
-            <a href="mailto:masteraccount@whatshould-do.com" class="card-button"
-              >문의하기</a
-            >
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="/assets/biz_bridge_logo.png"
-            alt="Microsoft 365 Copilot"
-            class="card-image"
-          />
-          <p class="card-tag">비즈브릿지</p>
-          <p class="card-description">
-            회사들간의 기업을 홍보하고 소싱하는 어플리케이션입니다.
-          </p>
-          <div class="card-buttons">
-            <a href="../pages/biz_service/terms.html" class="card-button"
-              >이용약관</a
-            >
-            <a href="../pages/biz_service/policy.html" class="card-button"
-              >정보처리방침</a
-            >
-            <a href="mailto:masteraccount@whatshould-do.com" class="card-button"
-              >문의하기</a
-            >
-          </div>
-        </div>
-      </div>
-    </main>
+    <!-- 내용의 박스 -->
+    <div class="main-container">
+      <!-- 왼쪽 선택지 -->
+      <aside class="sidebar">
+        <h2 class="service-name">서비스 항목</h2>
+        <button class="tab-button active" data-tab="service">
+          운영중인 서비스
+        </button>
+        <button class="tab-button" data-tab="webdev">홈페이지 제작</button>
+      </aside>
+
+      <!-- 🟩 메인 컨텐츠 -->
+      <main class="content">
+        <div class="cards-container" id="cards-container"></div>
+      </main>
+    </div>
   </body>
+
+  <script src="../scripts/service.js"></script>
 </html>

@@ -1,16 +1,33 @@
-/* header */
+/* 공통 스타일 */
+body,
+h1,
+h2,
+p,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
 .header {
-  width: 100vw;
+  width: 100%;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .nav-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
 .logo {
@@ -26,112 +43,190 @@
 }
 
 .nav-link:hover {
-  color: gray;
-  text-decoration: underline;
-  text-decoration-color: red;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  color: red;
 }
 
+/* 전체 레이아웃 */
 .main-container {
-  width: 100vw;
+  display: flex;
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 사이드바 */
+.sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
+  width: 200px;
+  border-right: 2px solid black;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
 }
 
-/* 카드들을 가로로 정렬 */
+.service-name {
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.tab-button:hover {
+  text-decoration: underline;
+}
+
+/* 메인 컨텐츠 */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 모바일 파트 */
+.card-button:hover {
+  background-color: #333;
+}
+
+/* 기본 스타일 */
 .cards-container {
   display: flex;
+  gap: 20px;
   justify-content: center;
-  gap: 20px; /* 카드 사이 간격 */
-  flex-wrap: wrap; /* 화면 작아지면 카드가 내려가도록 */
-  padding: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* 넘치면 줄바꿈 */
 }
 
-/* 카드 스타일 */
+/* card-contaoner + row 혹은 column html 에 class 가 둘다 있어야함 */
+.cards-container.row {
+  flex-direction: row;
+}
+
+.cards-container.column {
+  flex-direction: column;
+}
+
+/* ===== */
+
 .card {
   border: 1px solid black;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 10px;
   width: 350px;
-  height: 500px;
-  text-align: left;
-  overflow: hidden;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
-/* 이미지 스타일 */
-.card-image {
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-}
-
-/* 블로그 태그 스타일 */
 .card-tag {
-  color: black;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 10px;
+  color: grey;
 }
-
-/* 설명 스타일 */
-.card-description {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-}
-
-/* 버튼 묵음 */
 .card-buttons {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-/* 버튼 스타일 */
+.card-description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .card-button {
-  display: block;
-  background: black;
+  background-color: black;
   color: white;
+  padding: 8px 12px;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
+  text-decoration: none;
 }
 
-.card-button:hover {
-  background: #333;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-@media (max-width: 768px) {
-  .nav-container {
-    margin: 0 auto;
-    padding: 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.card-image {
+  width: 100%;
+  border-radius: 8px;
+}
 
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
+/* ==== */
+/* 웹개발쪽 */
+.preview-frame {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-  .main-container > h1 {
-    padding-left: 0;
-    text-align: center;
-  }
-
+/* 🟢 스마트폰용 미디어쿼리 (가로 768px 이하일 때 적용) */
+@media screen and (max-width: 768px) {
+  /* 🟢 전체 레이아웃 세로 정렬 (Column) */
   .main-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0px 20px 0px;
+    flex-direction: column; /* 🔥 세로 배치! */
+    align-items: center; /* 🔥 가운데 정렬! */
+    padding: 10px; /* 🔥 여백 조정! */
+  }
+
+  /* 🟢 사이드바 숨기기 (모바일에선 필요 없으면) */
+  .sidebar {
+    width: 100%;
+    border-right: none; /* 🔥 테두리 제거! */
+    border-bottom: 2px solid black; /* 🔥 아래에 테두리! */
+    padding: 10px;
+    position: relative; /* 🔥 sticky 대신! */
+    text-align: center; /* 🔥 가운데 정렬! */
+  }
+
+  /* 🟢 사이드바 버튼 크기 조정 */
+  .sidebar .tab-button {
+    padding: 8px 0; /* 🔥 여백 줄이기! */
+    font-size: 16px; /* 🔥 글씨 크기 줄이기! */
+  }
+
+  /* 🟢 카드 컨테이너 세로 정렬 (Column) */
+  .cards-container {
+    flex-direction: column; /* 🔥 세로 배치! */
+    align-items: center; /* 🔥 가운데 정렬! */
+    gap: 15px; /* 🔥 카드 사이 간격 줄이기! */
+    padding: 10px; /* 🔥 여백 조정! */
+  }
+
+  /* 🟢 카드 크기 조정 (너비 줄이기) */
+  .card {
+    width: 90%; /* 🔥 가로 폭 90%로! */
+    max-width: 400px; /* 🔥 너무 커지지 않게! */
+    padding: 15px; /* 🔥 여백 줄이기! */
+  }
+
+  /* 🟢 iframe 스타일 조정 (너비 맞추기) */
+  .preview-frame {
+    width: 90%; /* 🔥 가로 폭 90%로! */
+    max-width: 400px; /* 🔥 너무 커지지 않게! */
+    height: 200px; /* 🔥 높이 조정! */
+  }
+
+  /* 🟢 카드 버튼 크기 조정 */
+  .card-button {
+    padding: 8px 12px; /* 🔥 여백 줄이기! */
+    font-size: 14px; /* 🔥 글씨 크기 줄이기! */
   }
 }
