@@ -30,23 +30,23 @@ function getServiceCards() {
       <div class="site-preview" onclick="window.open('https://staging.funcoding.jp/en', '_blank')">
         <iframe src="https://staging.funcoding.jp/en" class="preview-frame" style="pointer-events: none;"></iframe>
       </div>
+
     </div>
         <hr>
 
     <h2 style="text-align:center;">문의방법</h2>
 
     <div class="contact-container">
-      <!-- 카카오톡 문의 -->
+          <!-- 크몽 문의 -->
       <div class="contact-card">
-      
-        <h3>카카오톡 오픈채팅</h3>
-        <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button">문의하기</a>
+        <h3>크몽으로 문의하기</h3>
+        <a href="https://kmong.com/" target="_blank" class="contact-button">문의하기</a>
       </div>
 
-      <!-- 크몽 문의 -->
+      <!-- 카카오톡 문의 -->
       <div class="contact-card">
-        <h3>크몽 문의</h3>
-        <a href="https://kmong.com/" target="_blank" class="contact-button">문의하기</a>
+        <h3>카카오톡 오픈채팅 상담하기</h3>
+        <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button">문의하기</a>
       </div>
     </div>
   `;

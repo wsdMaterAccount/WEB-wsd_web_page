@@ -42,7 +42,7 @@ body {
 }
 
 /* 전체 레이아웃 */
-/* .main-container {
+.main-container {
   display: flex;
   max-width: 90%;
   margin: 20px auto;
@@ -118,7 +118,6 @@ body {
 .cards-container.column {
   flex-direction: column;
 }
-*/
 
 /* ==== */
 /* 웹개발쪽 */
@@ -277,30 +276,34 @@ hr {
 /* 🟢 스마트폰용 미디어쿼리 (가로 768px 이하일 때 적용) */
 @media screen and (max-width: 768px) {
   /* 전체 컨테이너 정렬 */
-  .main-container {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  /* 사이드바 (탭 버튼) 숨기거나 정렬 변경 */
   .service-name {
     display: none;
   }
 
+  .main-container {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* 사이드바 (탭 버튼) 숨기거나 정렬 변경 */
   .sidebar {
     position: static;
     display: flex;
-    width: 90%;
     flex-direction: row;
     border-right: none;
   }
 
   .tab-button {
-    width: 50%;
+    width: 50%; /* 🔥 두 개의 버튼이 균등하게 화면을 나누도록 설정 */
+    padding: 20px 0;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     background: #f4f4f4;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    box-sizing: border-box; /* 🔥 padding, border 포함해서 크기 계산 */
   }
 
   /* 선택된 버튼 스타일 */
@@ -310,12 +313,12 @@ hr {
     border-color: #333;
   }
 
-  /* 선택된 버튼 스타일 */
-  .tab-button.active {
-    background: #333;
-    color: white;
-    border-color: #333; /* 선택된 버튼 강조 */
+  .tab-button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 15px;
   }
+
   /* 메인 컨텐츠 */
   .content {
     padding: 10px;
@@ -354,6 +357,7 @@ hr {
     padding: 20px;
     border: 2px solid #ddd;
   }
+
   /* hr 줄어들도록 설정 */
   hr {
     width: 90%;
