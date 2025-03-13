@@ -120,7 +120,7 @@ body {
 }
 
 .mou-image {
-  width: 500px; /* 가로 크기 고정 */
+  width: 70%; /* 가로 크기 고정 */
   height: auto; /* 세로 비율 유지 */
   display: block;
   margin: 20px auto; /* 가운데 정렬 */
