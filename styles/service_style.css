@@ -119,6 +119,13 @@ body {
   flex-direction: column;
 }
 
+.mou-image {
+  width: 500px; /* 가로 크기 고정 */
+  height: auto; /* 세로 비율 유지 */
+  display: block;
+  margin: 20px auto; /* 가운데 정렬 */
+}
+
 /* ==== */
 /* 웹개발쪽 */
 .preview-frame {
@@ -140,7 +147,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px; /* 요소 간 간격 */
+  gap: 15px;
   padding: 20px;
 }
 
@@ -217,6 +224,18 @@ body {
   background: #0056b3;
 }
 
+.price-info {
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.price-info strong {
+  color: #d9534f; /* 강조 색상 (빨간색 계열) */
+}
+
 hr {
   border: none; /* 기본 테두리 제거 */
   height: 1px; /* 두께 조절 */
@@ -271,6 +290,29 @@ hr {
 .card-image {
   width: 100%;
   border-radius: 8px;
+}
+
+/* 표 */
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #f4f4f4;
 }
 
 /* 🟢 스마트폰용 미디어쿼리 (가로 768px 이하일 때 적용) */

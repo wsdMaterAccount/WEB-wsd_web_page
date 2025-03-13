@@ -16,23 +16,57 @@ function getServiceCards() {
 
       걱정하지 마세요!<br>
       상담을 통해 고객님의 니즈를 파악해 최적의 솔루션을 제공해 드립니다.
+      <img src="/assets/mou_image.png" alt="MOU 이미지" class="mou-image">
     </div>
-
     <hr>
 
-    <h2 style="text-align:center;">포트폴리오</h2>
+<h2 style="text-align:center;">단가표 및 포토폴리오</h2>
 
+<div class="pricing-table">
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>제품명</th>
+        <th>가격</th>
+        <th>내용</th>
+        <th>참고 사이트</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>정적 웹사이트</td>
+        <td>500.000 원</td>
+        <td>반응형 웹, seo 최적화</td>
+       <td><a href="https://giosun.com/31" target="_blank">https://giosun.com/31</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>동적 웹사이트</td>
+        <td>상의 후 결정</td>
+        <td>고객이 원하는 모든 서비스 구현 가능</td>
+        <td><a href="https://giolite.co.kr" target="_blank">https://giolite.co.kr</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     <div class="portfolio-container">
-      <div class="site-preview" onclick="window.open('https://anhsonstudio.com', '_blank')">
-        <iframe src="https://anhsonstudio.com" class="preview-frame" style="pointer-events: none;"></iframe>
-      </div>
-
       <div class="site-preview" onclick="window.open('https://staging.funcoding.jp/en', '_blank')">
         <iframe src="https://staging.funcoding.jp/en" class="preview-frame" style="pointer-events: none;"></iframe>
       </div>
 
+      <div class="site-preview" onclick="window.open('https://anhsonstudio.com', '_blank')">
+        <iframe src="https://anhsonstudio.com" class="preview-frame" style="pointer-events: none;"></iframe>
+      </div>
     </div>
-        <hr>
+    <div class="price-info">
+  <p><strong>※ 본 가격은 홈페이지 제작 비용만 포함되어 있으며, 유지관리 및 도메인, 호스팅 비용은 포함되어 있지 않습니다.</strong></p>
+  <p>(서버 사이드 요청을 많이 사용한다면 비용이 증가할 수 있지만, 대부분의 기업 홈페이지의 서버는 비교적 단순한 구조로 구성됩니다.  
+  따라서 일반적인 기업 홈페이지의 도메인 및 호스팅 비용은 연간 <strong>15 USD (1년 / 약 2만원)</strong> 내외입니다.)</p>
+</div>
+<hr>
+
 
     <h2 style="text-align:center;">문의방법</h2>
 
