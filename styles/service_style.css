@@ -290,7 +290,7 @@ hr {
   .sidebar {
     position: static;
     display: flex;
-    width: 93%;
+    width: 90%;
     flex-direction: row;
     border-right: none;
   }
