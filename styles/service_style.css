@@ -1,10 +1,5 @@
 /* 공통 스타일 */
-body,
-h1,
-h2,
-p,
-a,
-button {
+* {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
@@ -47,7 +42,7 @@ body {
 }
 
 /* 전체 레이아웃 */
-.main-container {
+/* .main-container {
   display: flex;
   max-width: 90%;
   margin: 20px auto;
@@ -89,6 +84,11 @@ body {
   text-decoration: underline;
 }
 
+.tab-button.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 /* 메인 컨텐츠 */
 .content {
   flex: 1;
@@ -118,9 +118,116 @@ body {
 .cards-container.column {
   flex-direction: column;
 }
+*/
+
+/* ==== */
+/* 웹개발쪽 */
+.preview-frame {
+  width: 100%; /* 반응형을 고려해 전체 너비 사용 */
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.site-preview {
+  flex: 1; /* 유동적인 크기 */
+  max-width: 320px; /* 최대 크기 제한 */
+  margin: 10px;
+  text-align: center;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* 요소 간 간격 */
+  padding: 20px;
+}
+
+.description {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.notice {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 제품문의 관련 */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* flex-wrap: wrap; */
+  padding: 20px;
+}
+
+.contact-card {
+  width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.contact-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact-card a {
+  margin-bottom: 20px;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.contact-card .contact-button {
+  display: block;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  /* font-size: 16px; */
+  /* font-weight: bold; */
+  text-decoration: none;
+  /* transition: 0.3s; */
+}
+
+.contact-card .contact-button:hover {
+  background: #0056b3;
+}
+
+hr {
+  border: none; /* 기본 테두리 제거 */
+  height: 1px; /* 두께 조절 */
+  background-color: black; /* 연한 회색 */
+  width: 80%; /* 너비 조정 */
+  margin: 20px auto; /* 위아래 간격 + 가운데 정렬 */
+}
 
 /* ===== */
-
+/* 모바일 */
 .card {
   border: 1px solid black;
   border-radius: 10px;
@@ -167,66 +274,88 @@ body {
   border-radius: 8px;
 }
 
-/* ==== */
-/* 웹개발쪽 */
-.preview-frame {
-  width: 300px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
 /* 🟢 스마트폰용 미디어쿼리 (가로 768px 이하일 때 적용) */
 @media screen and (max-width: 768px) {
-  /* 🟢 전체 레이아웃 세로 정렬 (Column) */
+  /* 전체 컨테이너 정렬 */
   .main-container {
-    flex-direction: column; /* 🔥 세로 배치! */
-    align-items: center; /* 🔥 가운데 정렬! */
-    padding: 10px; /* 🔥 여백 조정! */
+    flex-direction: column;
+    padding: 0;
   }
 
-  /* 🟢 사이드바 숨기기 (모바일에선 필요 없으면) */
+  /* 사이드바 (탭 버튼) 숨기거나 정렬 변경 */
+  .service-name {
+    display: none;
+  }
+
   .sidebar {
-    width: 100%;
-    border-right: none; /* 🔥 테두리 제거! */
-    border-bottom: 2px solid black; /* 🔥 아래에 테두리! */
+    position: static;
+    display: flex;
+    width: 93%;
+    flex-direction: row;
+    border-right: none;
+  }
+
+  .tab-button {
+    width: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #f4f4f4;
+  }
+
+  /* 선택된 버튼 스타일 */
+  .tab-button.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+  }
+
+  /* 선택된 버튼 스타일 */
+  .tab-button.active {
+    background: #333;
+    color: white;
+    border-color: #333; /* 선택된 버튼 강조 */
+  }
+  /* 메인 컨텐츠 */
+  .content {
     padding: 10px;
-    position: relative; /* 🔥 sticky 대신! */
-    text-align: center; /* 🔥 가운데 정렬! */
   }
 
-  /* 🟢 사이드바 버튼 크기 조정 */
-  .sidebar .tab-button {
-    padding: 8px 0; /* 🔥 여백 줄이기! */
-    font-size: 16px; /* 🔥 글씨 크기 줄이기! */
-  }
-
-  /* 🟢 카드 컨테이너 세로 정렬 (Column) */
+  /* 카드 레이아웃 조정 */
   .cards-container {
-    flex-direction: column; /* 🔥 세로 배치! */
-    align-items: center; /* 🔥 가운데 정렬! */
-    gap: 15px; /* 🔥 카드 사이 간격 줄이기! */
-    padding: 10px; /* 🔥 여백 조정! */
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* 🟢 카드 크기 조정 (너비 줄이기) */
   .card {
-    width: 90%; /* 🔥 가로 폭 90%로! */
-    max-width: 400px; /* 🔥 너무 커지지 않게! */
-    padding: 15px; /* 🔥 여백 줄이기! */
+    width: 90%;
+    max-width: 350px;
   }
 
-  /* 🟢 iframe 스타일 조정 (너비 맞추기) */
-  .preview-frame {
-    width: 90%; /* 🔥 가로 폭 90%로! */
-    max-width: 400px; /* 🔥 너무 커지지 않게! */
-    height: 200px; /* 🔥 높이 조정! */
+  /* 문의하기 카드 정렬 */
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 🔥 가로 중앙 정렬 */
+    align-items: stretch; /* 🔥 세로 크기 동일하게 */
+    flex-wrap: wrap; /* 🔥 화면이 작으면 자동으로 줄바꿈 */
+    max-width: 100%; /* 🔥 부모 요소 크기를 벗어나지 않도록 제한 */
+    overflow-x: hidden; /* 🔥 가로 스크롤 방지 */
+    gap: 10px;
   }
 
-  /* 🟢 카드 버튼 크기 조정 */
-  .card-button {
-    padding: 8px 12px; /* 🔥 여백 줄이기! */
-    font-size: 14px; /* 🔥 글씨 크기 줄이기! */
+  .contact-card {
+    flex: 1; /* 🔥 카드 크기를 균등하게 */
+    max-width: 200px; /* 🔥 너무 커지지 않도록 제한 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ddd;
+  }
+  /* hr 줄어들도록 설정 */
+  hr {
+    width: 90%;
   }
 }
