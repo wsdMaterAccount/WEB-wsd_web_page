@@ -74,19 +74,21 @@ function getServiceCards() {
           <!-- 크몽 문의 -->
       <div class="contact-card">
         <h3>크몽으로 문의하기</h3>
-        <a href="https://kmong.com/" target="_blank" class="contact-button">문의하기</a>
+        <a href="https://kmong.com/" target="_blank" class="contact-button" onclick="trackOutboundLink('https://kmong.com'); return false;">문의하기</a>
+
       </div>
 
       <!-- 카카오톡 문의 -->
       <div class="contact-card">
         <h3>카카오톡 오픈채팅 상담하기</h3>
-        <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button">문의하기</a>
+        <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button" onclick="trackOutboundLink('https://open.kakao.com/o/sZMTpL7g'); return false;">문의하기</a>
+
       </div>
     </div>
   `;
 }
 
-// 🟢 iframe 클릭 시 새 탭에서 열기 위한 이벤트 추가 함수
+// iframe 클릭 시 새 탭에서 열기 위한 이벤트 추가 함수
 function addIframeClickEvent() {
   const iframes = document.querySelectorAll(".preview-frame"); // 🔄 매번 새로 가져옴!
   iframes.forEach((iframe) => {
@@ -97,14 +99,14 @@ function addIframeClickEvent() {
   });
 }
 
-// 🟢 처음 로딩 시 기본 내용 설정
+// 처음 로딩 시 기본 내용 설정
 window.onload = () => {
   buttons[0].classList.add("active");
   cardsContainer.classList.add("column"); // 🔥 기본으로 row 클래스 추가!
   cardsContainer.innerHTML = getServiceCards(); // 🔥 카드 함수 호출!
 };
 
-// 🟢 버튼 클릭 시 내용 교체
+// 버튼 클릭 시 내용 교체
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     buttons.forEach((btn) => btn.classList.remove("active"));
@@ -142,3 +144,15 @@ buttons.forEach((button) => {
     }
   });
 });
+
+// 구글 에널리틱스를 위한
+function trackOutboundLink(url) {
+  gtag("event", "click", {
+    event_category: "outbound",
+    event_label: url,
+    transport_type: "beacon",
+    event_callback: function () {
+      document.location = url;
+    },
+  });
+}
