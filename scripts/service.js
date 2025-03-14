@@ -146,13 +146,13 @@ buttons.forEach((button) => {
 });
 
 // 구글 에널리틱스를 위한
-// function trackOutboundLink(url) {
-//   gtag("event", "사용자_반응", {
-//     event_category: "outbound",
-//     event_label: url,
-//     transport_type: "beacon",
-//     event_callback: function () {
-//       document.location = url;
-//     },
-//   });
-// }
+function trackOutboundLink(url) {
+  gtag("event", "사용자_반응", {
+    event_category: "outbound",
+    event_label: url,
+    transport_type: "beacon",
+    event_callback: function () {
+      document.location = url;
+    },
+  });
+}
