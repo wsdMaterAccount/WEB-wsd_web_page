@@ -73,14 +73,14 @@ function getServiceCards() {
     <div class="contact-container">
           <!-- 크몽 문의 -->
       <div class="contact-card">
-        <h3>크몽으로 문의하기</h3>
+        <h3>크몽에서 확인하기</h3>
         <a href="https://kmong.com/" target="_blank" class="contact-button" onclick="trackOutboundLink('https://kmong.com'); return false;">문의하기</a>
 
       </div>
 
       <!-- 카카오톡 문의 -->
       <div class="contact-card">
-        <h3>카카오톡 오픈채팅 상담하기</h3>
+        <h3>카카오톡 오픈채팅 문의하기</h3>
         <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button" onclick="trackOutboundLink('https://open.kakao.com/o/sZMTpL7g'); return false;">문의하기</a>
 
       </div>
