@@ -71,19 +71,19 @@ function getServiceCards() {
     <h2 style="text-align:center;">문의방법</h2>
 
     <div class="contact-container">
-          <!-- 크몽 문의 -->
-      <div class="contact-card">
-        <h3>크몽에서 확인하기</h3>
-        <a href="https://kmong.com/" target="_blank" class="contact-button" onclick="trackOutboundLink('https://kmong.com'); return false;">문의하기</a>
+<!-- 크몽 문의 -->
+<div class="contact-card">
+  <h3>크몽에서 확인하기</h3>
+  <a href="https://kmong.com/" target="_blank" class="contact-button">문의하기</a>
+</div>
 
-      </div>
+<!-- 카카오톡 문의 -->
+<div class="contact-card">
+  <h3>카카오톡 오픈채팅 문의하기</h3>
+  <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button">문의하기</a>
+</div>
 
-      <!-- 카카오톡 문의 -->
-      <div class="contact-card">
-        <h3>카카오톡 오픈채팅 문의하기</h3>
-        <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button" onclick="trackOutboundLink('https://open.kakao.com/o/sZMTpL7g'); return false;">문의하기</a>
 
-      </div>
     </div>
   `;
 }
@@ -149,7 +149,7 @@ buttons.forEach((button) => {
 function trackOutboundLink(url) {
   gtag("event", "사용자_반응", {
     event_category: "outbound",
-    event_label: url,
+    event_label: url, //이거 analytics 에 저장
     transport_type: "beacon",
     event_callback: function () {
       document.location = url;
