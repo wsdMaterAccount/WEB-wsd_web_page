@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../styles/service_style.css" />
 
     <!-- 구글 에널리틱스 -->
-    <!-- Google tag (gtag.js) -->
-    <script
+    <!-- ====== -->
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-JS4K4LLCKJ"
     ></script>
@@ -24,6 +24,59 @@
       gtag("js", new Date());
 
       gtag("config", "G-JS4K4LLCKJ");
+    </script> -->
+    <!-- ======= -->
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JS4K4LLCKJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "G-JS4K4LLCKJ");
+
+      // UTM 파라미터 확인 (Facebook, Google 유입 추적 정확도 향상)
+      function getUTMParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      // 유입 소스 추적 (referrer + UTM 태그 활용)
+      function getReferrerDomain() {
+        try {
+          return new URL(document.referrer).hostname || "direct";
+        } catch (e) {
+          return "direct";
+        }
+      }
+
+      let source = getReferrerDomain(); // 기본값: referrer의 도메인 (없으면 direct)
+      let medium = "referral"; // 기본값 (GA4의 기본 리퍼럴 설정)
+
+      // UTM이 있다면 우선 적용
+      const utmSource = getUTMParameter("utm_source");
+      const utmMedium = getUTMParameter("utm_medium");
+
+      if (utmSource) {
+        source = utmSource;
+        medium = utmMedium || "none"; // UTM이 있으면 medium을 적용하고 없으면 "none" (GA4 기본값)
+      } else if (source === "direct") {
+        medium = "none"; // Direct 방문의 경우 GA4 표준과 맞춤
+      }
+
+      // GA4 이벤트 전송
+      gtag("event", "page_view", {
+        page_location: window.location.href,
+        referrer: document.referrer,
+        traffic_source: source, // 소스만 전달
+        traffic_medium: medium, // 매체도 따로 전달
+      });
     </script>
   </head>
   <body>
