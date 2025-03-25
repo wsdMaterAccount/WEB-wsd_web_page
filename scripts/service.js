@@ -5,6 +5,24 @@ const cardsContainer = document.getElementById("cards-container");
 // 🟢 모바일 카드 HTML 생성 함수
 function getServiceCards() {
   return `
+
+      <h2 style="text-align:center;">문의방법</h2>
+    <div class="contact-container">
+<!-- 크몽 문의 -->
+<div class="contact-card">
+  <h3>크몽에서 확인하기</h3>
+  <a href="https://kmong.com/gig/650477" target="_blank" class="contact-button">문의하기</a>
+</div>
+
+<!-- 카카오톡 문의 -->
+<div class="contact-card">
+  <h3>카카오톡 오픈채팅 문의하기</h3>
+  <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button">문의하기</a>
+</div>
+    </div>
+    <hr>
+
+
     <div class="description">
       <h1>코드는 관세도 물류 비용도 필요 없습니다.</h1><br>
       구글과 아마존과 같은 거대 IT 기업이 인도와 같은 국가에 외주를 맡기는 것은 이유가 있습니다.<br><br>
@@ -68,23 +86,6 @@ function getServiceCards() {
 <hr>
 
 
-    <h2 style="text-align:center;">문의방법</h2>
-
-    <div class="contact-container">
-<!-- 크몽 문의 -->
-<div class="contact-card">
-  <h3>크몽에서 확인하기</h3>
-  <a href="https://kmong.com/gig/650477" target="_blank" class="contact-button">문의하기</a>
-</div>
-
-<!-- 카카오톡 문의 -->
-<div class="contact-card">
-  <h3>카카오톡 오픈채팅 문의하기</h3>
-  <a href="https://open.kakao.com/o/sZMTpL7g" target="_blank" class="contact-button">문의하기</a>
-</div>
-
-
-    </div>
   `;
 }
 
