@@ -74,7 +74,7 @@ function getServiceCards() {
 <!-- 크몽 문의 -->
 <div class="contact-card">
   <h3>크몽에서 확인하기</h3>
-  <a href="https://kmong.com/" target="_blank" class="contact-button">문의하기</a>
+  <a href="https://kmong.com/gig/650477" target="_blank" class="contact-button">문의하기</a>
 </div>
 
 <!-- 카카오톡 문의 -->
