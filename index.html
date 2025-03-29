@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WSD - What Should Do</title>
+    <meta
+      name="description"
+      content="WSD - 'What Should Do'에서는 기업이 단순 이익 추구를 넘어서 사회적 책임과 지속 가능한 발전을 모색하도록 돕습니다."
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -25,13 +30,34 @@
 
       gtag("config", "G-JS4K4LLCKJ");
     </script> -->
+
+    <!-- seo 위해 -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "WSD",
+        "url": "http://www.whatshould-do.com",
+        "logo": "http://www.whatshould-do.com/assets/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+82-10-1234-5678",
+          "contactType": "customer service"
+        }
+      }
+    </script>
   </head>
   <body>
     <header class="header">
       <div class="nav-container">
         <h1 class="logo">WSD</h1>
         <nav>
-          <a href="/pages/service.html" class="nav-link">서비스 소개</a>
+          <a
+            href="/pages/service.html"
+            class="nav-link"
+            title="Learn more about our services"
+            >서비스 소개</a
+          >
         </nav>
       </div>
     </header>
